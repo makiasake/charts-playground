@@ -30,7 +30,10 @@ var chart = new Chartist.Bar('#ct_chart_7', {
                 return value % 1 == 0 ? value : null;
             }
         }, plugins: [
-            Chartist.plugins.tooltip()
+            Chartist.plugins.tooltip(),
+            Chartist.plugins.legend({
+                legendNames: ['Conforme', 'Não conforme', 'Não conforme critico', 'Critico']
+            })
         ]
     }).on('draw', function (data) {
         if (data.type === 'bar') {
